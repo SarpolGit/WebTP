@@ -1,0 +1,19 @@
+{% extends "include/base.html" %} 
+{% load static %}
+
+<!--Content-->
+
+{% block top_head %}
+    <div class="col-3">
+        <h2>Hot questions</h2>
+    </div>
+    <div class="col-2">
+        <a href="#">Hot questions</a>
+    </div>
+{% endblock top_head %} 
+
+{% block content %}
+    {% for question in questions %}
+        {% include "include/template_question.html" %} 
+    {% endfor %}
+{% endblock content%}

@@ -1,0 +1,38 @@
+{% load static %}
+
+<div class="row question">
+  <div class="col-3">
+    <img src="{% static "img/dog.jpg" %}" class="avatar-content">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-4">
+        <div class="count">5</div>
+      </div>
+      <div class="col-5"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-auto">
+        <button type="button" class="btn btn-success btn-sm">Like</button>
+      </div>
+      <div class="col-1">
+        <!--Костыль-->
+      </div>
+      <div class="col-6">
+        <button type="button" class="btn btn-danger btn-sm">Dislike</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-9">
+    <a href="./question.html" style="text-decoration: none">
+      <h2>Текст мистера Пса {{question.title}}</h2>
+    </a>
+    <div>
+    {{question.text}}
+      Повседневная практика показывает, что рамки и место обучения кадров
+      позволяет выполнять важные задания по разработке направлений
+      прогрессивного развития.
+    </div>
+    <a href="#">answer(3)</a>
+    Tags:<a href="#">black-jack</a> <a href="./tag.html">bender</a>
+  </div>
+</div>
