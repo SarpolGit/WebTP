@@ -1,0 +1,47 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100">
+
+   <head>
+      <meta charset="utf-8">
+      <!-- Bootstrap core CSS -->
+      <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+      <link href="{% static "css/my-css.css" %}" rel="stylesheet">
+   </head>
+   
+   <body class="d-flex flex-column h-100">
+      <!-- Navbar -->
+         {% include "include/navbar.html" %}
+      <!--Content-->
+      <main class="flex-shrink-0">
+         <div class="container">
+            <!-- Body head-->
+            <div class="row blocks">
+               {% block top_name %}
+                  <!--Top Name -->
+               {% endblock top_name%}
+            </div>
+
+            <div class="row">
+               <div class="col-8">
+               {% block content %}
+                  <!--Main part-->
+               {% endblock content %}
+               </div>
+
+               <!--Tags-->
+               <div class="col-4 tags">
+                  {% block side %}
+                     {% include "include/side.html" %}
+                  {% endblock side %}
+               </div>
+            </div>
+         </div>
+      </main>
+
+     <!-- Footer -->
+         {% include "include/footer.html" %}
+
+      <script src="js/bootstrap.bundle.min.js"
+   </body>
+</html>

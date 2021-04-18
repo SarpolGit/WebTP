@@ -1,0 +1,54 @@
+{% extends "include/base.html" %} {% load static %}
+
+<!--Content-->
+<div class="row blocks">
+  {% block top_head %}
+  <h2>New Question</h2>
+  {% endblock top_head %}
+</div>
+
+{% block content %}
+<div class="row">
+  <div class="row">
+    <div class="col-2 form-label">
+      <h5>Title</h5>
+    </div>
+    <div class="col-8">
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Write your title here"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2 form-label">
+      <h5>Text</h5>
+    </div>
+    <div class="col-8">
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="10"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 10px">
+    <div class="col-2 form-label">
+      <h5>Tags</h5>
+    </div>
+    <div class="col-8">
+      <input type="text" class="form-control" id="exampleFormControlInput1" />
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2 form-label"></div>
+  <div class="col-1">
+    <input class="btn btn-primary" type="submit" value="Ask" />
+  </div>
+</div>
+{% endblock content %}
