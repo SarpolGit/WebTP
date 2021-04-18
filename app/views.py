@@ -20,3 +20,7 @@ def question(request):
 def hot(request):
     return render(request,'hot.html',{'questions': questions})
 
+def one_question(request,pk):
+    question = questions[pk]
+    return render(request,'question.html',{"question": question})
+
