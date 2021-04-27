@@ -3,12 +3,12 @@
 	<nav class="navbar-light" style="background-color: #e3f2fd;">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-1"> <a href="./index.html" class="navbar-brand logo-font"><span class="ask-color">Ask</span>Shirshov</a> </div>
+				<div class="col-1"> <a href="{% url "start_page" %}" class="navbar-brand logo-font"><span class="ask-color">Ask</span>Shirshov</a> </div>
 				<div class="col-3"> </div>
 				<div class="col-4">
 					<form class="d-flex search-padding">
 						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success" type="submit">Ask</button>
+						<button class="btn btn-outline-success" type="submit" onclick="location.href = {% url "ask" %}">Ask</button>
 					</form>
 				</div>
 				<div class="col-2"> </div>
@@ -18,8 +18,8 @@
 						<div>Mr.Dog</div>
 					</div>
 					<div class="row">
-						<div class="col-6"> <a href="./settings.html">Settings</a> </div>
-						<div class="col-6"> <a href="./login.html">Logout</a> </div>
+						<div class="col-6"> <a href="{% url "settings" %}">Settings</a> </div>
+						<div class="col-6"> <a href="{% url "login" %}">Logout</a> </div>
 					</div>
 				</div>
 			</div>

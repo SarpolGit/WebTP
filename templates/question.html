@@ -5,75 +5,13 @@
 
   {% include "include/template_mainquestion.html" %}
 
-<div class="row question">
-  <div class="col-3">
-    <img src="{% static "img/cat.jpg" %}" class="avatar-content" />
-    <div class="row">
-      <div class="col-3"></div>
-      <div class="col-4">
-        <div class="count">5</div>
-      </div>
-      <div class="col-5"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-auto">
-        <button type="button" class="btn btn-success btn-sm">Like</button>
-      </div>
-      <div class="col-1">
-        <!--Костыль-->
-      </div>
-      <div class="col-6">
-        <button type="button" class="btn btn-danger btn-sm">Dislike</button>
-      </div>
-    </div>
-  </div>
-  <div class="col-9">
-    <div>
-      Товарищи! Рамки и место обучения кадров требуют от нас анализа
-      существенных финансовых и административных условий.
-    </div>
-    <label class="container">
-      <input type="checkbox" />
-      <span class="checkmark">Correct!</span>
-    </label>
-  </div>
-</div>
+  {% for answer in answers %}
+    {% include "include/answer.html" %}
+   {% endfor %}
+  
+  {% include "include/pagination_answers.html" %}
 
-<div class="row question">
-  <div class="col-3">
-    <img src="{% static "img/sheep.jpg" %}" class="avatar-content" />
-    <div class="row">
-      <div class="col-3"></div>
-      <div class="col-4">
-        <div class="count">5</div>
-      </div>
-      <div class="col-5"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-auto">
-        <button type="button" class="btn btn-success btn-sm">Like</button>
-      </div>
-      <div class="col-1">
-        <!--Костыль-->
-      </div>
-      <div class="col-6">
-        <button type="button" class="btn btn-danger btn-sm">Dislike</button>
-      </div>
-    </div>
-  </div>
-  <div class="col-9">
-    <div>
-      Товарищи! постоянный количественный рост и сфера нашей активности
-      позволяет оценить значение соответствующий условий активизации. Значимость
-      этих проблем настолько очевидна, что сложившаяся структура организации
-      требуют от нас анализа направлений прогрессивного развития.
-    </div>
-    <label class="container">
-      <input type="checkbox" />
-      <span class="checkmark">Correct!</span>
-    </label>
-  </div>
-</div>
+
 <div class="mb-3 upperline">
   <label for="exampleFormControlTextarea1" class="form-label"></label>
   <textarea

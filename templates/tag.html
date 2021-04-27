@@ -1,220 +1,26 @@
-<!doctype html>
-<html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
+{% extends "include/base.html" %} 
+{% load static %}
 
-    <!-- Bootstrap core CSS -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/css/my-css.css" rel="stylesheet">
+<!--Content-->
+
+{% block article_name %}
+<div class="row">
+<div class="col-6">
+  <h2>Tag:{{needed_tag}}</h2>
+</div>
+<div class="col-6">
+<a href="{% url "start_page" %}"> Go to new questions </a>
+</div>
+</div>
 
 
-  </head>
+{% endblock article_name %} 
 
-  <!--Navbar-->
-  <body class="d-flex flex-column h-100">
-  <header style="margin-bottom:10px">
-    <nav class="navbar-light" style="background-color: #e3f2fd;">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-1">
-              <a href="./index.html" class="navbar-brand logo-font"><span class="ask-color">Ask</span>Shirshov</a>
-            </div>
-            <div class="col-3"> </div>
-            <div class="col-4">
-              <form class="d-flex search-padding">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Ask</button>
-              </form>
-            </div>
-            <div class="col-2"> </div>
-            <div class="col-1">
-              <img class="avatar" src="../static/img/dog.jpg" class="img-thumbnail">
-            </div>
-            <div class="col-1">
-              <div class="row">
-                <div>Mr.Dog</div>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <a href="./settings.html">Settings</a>
-                </div>
-                <div class="col-6">
-                  <a href="./login.html">Logout</a>
-                </div>
-            </div>
-          </div>
-        </div>
-    </nav>
-  </header>
+{% block content %}
+    {% for question in questions %}
+        {% include "include/template_question.html" %} 
+    {% endfor %}
 
-  <!--Content-->
-  <main class="flex-shrink-0">
-    <div class="container">
-
-    <!-- Body head-->
-      <div class="row blocks">
-        <h2>Tag:Bender</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-8">
-          <div class="row question">
-            <div class="col-3">
-              <img src="../static/img/dog.jpg" class="avatar-content">
-                <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-4">
-                      <div class="count">5</div>
-                    </div>
-                    <div class="col-5"></div>
-                  </div>
-
-                <div class="row">
-                  <div class="col-md-auto">
-                    <button type="button" class="btn btn-success btn-sm">Like</button>
-                  </div>
-                  <div class="col-1"><!--Костыль--></div>
-                  <div class="col-6">
-                    <button type="button" class="btn btn-danger btn-sm">Dislike</button>
-                  </div>
-                </div>
-
-            </div>
-            <div class="col-9">
-              <a href="./question.html" style="text-decoration:none;"><h2>Текст мистера Пса</h2></a>
-              <div>
-              Повседневная практика показывает, 
-              что рамки и место обучения кадров позволяет выполнять важные задания 
-              по разработке направлений прогрессивного развития. 
-              </div>
-              <a href="#">answer(3)</a>
-              Tags:<a href="#">black-jack</a> <a href="#">bender</a>
-            </div>
-          </div>
-        
-          <div class="row question">
-            <div class="col-3">
-              <img src="../static/img/cat.jpg" class="avatar-content">
-                <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-4">
-                      <div class="count">5</div>
-                    </div>
-                    <div class="col-5"></div>
-                  </div>
-
-                <div class="row">
-                  <div class="col-md-auto">
-                    <button type="button" class="btn btn-success btn-sm">Like</button>
-                  </div>
-                  <div class="col-1"><!--Костыль--></div>
-                  <div class="col-6">
-                    <button type="button" class="btn btn-danger btn-sm">Dislike</button>
-                  </div>
-                </div>
-            </div>
-            <div class="col-9">
-              <a href="#" style="text-decoration:none;"><h2>Текст мистера Кота</h2></a>
-              <div>
-              Товарищи! Рамки и место обучения кадров требуют 
-              от нас анализа существенных финансовых и административных условий.  
-              </div>
-              <a href="#">answer(3)</a>
-              Tags:<a href="#">black-jack</a> <a href="#">bender</a>
-            </div>
-          </div>
-
-          <div class="row question">
-            <div class="col-3">
-              <img src="../static/img/sheep.jpg" class="avatar-content">
-                <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-4">
-                      <div class="count">5</div>
-                    </div>
-                    <div class="col-5"></div>
-                  </div>
-
-                <div class="row">
-                  <div class="col-md-auto">
-                    <button type="button" class="btn btn-success btn-sm">Like</button>
-                  </div>
-                  <div class="col-1"><!--Костыль--></div>
-                  <div class="col-6">
-                    <button type="button" class="btn btn-danger btn-sm">Dislike</button>
-                  </div>
-                </div>
-            </div>
-            <div class="col-9">
-              <a href="#" style="text-decoration:none;"><h2>Текст миссис Овцы</h2></a>
-              <div>
-              Значимость этих проблем настолько очевидна, что начало повседневной работы по 
-              формированию позиции представляет собой интересный эксперимент проверки новых предложений.   
-              </div>
-              <a href="#">answer(3)</a>
-              Tags:<a href="#">black-jack</a> <a href="#">bender</a>
-            </div>
-          </div>
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        
-        <!--Tags-->
-        <div class="col-4 tags">
-         <div class="blocks">
-            <h2>Popular tags</h2>
-            <div class="row">
-              perl 
-              <font class="nln red">python</font>
-              Technopark
-            </div>
-            <div class="row">
-              <font class="nln red">MySQL</font> <font class="nln green">django</font>
-            </div>
-            <div class="row">
-              Mail.ru Voloshin <font class="nln yellow">firefox</font>
-            </div>
-          </div>
-
-          <div class="blocks">
-            <h2>Best members</h2>
-            <div class="row">
-            <a href="#">Mr.Dog</a>
-            </div>
-            <div class="row">
-            <a href="#">Mr.Cat</a>
-            </div>
-            <div class="row">
-            <a href="#">Ms.Sheep</a>
-            </div>
-            <div class="row">
-            <a href="#">A.Shirshov</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </main>
-      <footer class="footer mt-auto py-3 bg-secondary">
-         <div class="container">
-            <span>Created by A.Shirshov 2021</span>
-         </div>
-      </footer>
-      <script src="js/bootstrap.bundle.min.js"     
-  </body>
-</html>
+    {% include "include/pagination.html" %}
+    
+{% endblock content%}

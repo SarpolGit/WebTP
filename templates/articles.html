@@ -1,0 +1,20 @@
+{% extends "include/base.html" %} 
+{% load static %}
+
+<!--Content-->
+
+{% block article_name %}
+<div class="col-3">
+  <h2>Test DB</h2>
+</div>
+
+{% endblock article_name %} 
+
+{% block content %}
+    {% for question in questions %}
+        {% include "include/base_article.html" %} 
+    {% endfor %}
+
+    {% include "include/pagination.html" %}
+    
+{% endblock content%}
